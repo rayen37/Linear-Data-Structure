@@ -1,0 +1,18 @@
+ALGORITHM overlappingelem
+VAR
+     
+    tab1 : ARRAY_OF INTEGER[50];
+    tab2 : ARRAY_OF INTEGER[50];
+    i,j,sum :INTEGER
+BEGIN
+    
+    FOR i FROM 0 TO tab1.length -1 STEP i+1  DO
+            FOR j FROM 0 TO tab1.length -1 STEP i+1  DO
+                IF (tab1[i]=tab2[j]) THEN
+                    sum=(sum+tab1[i])*2
+                END_IF
+            
+        END_FOR
+    END_FOR
+    write(sum)
+END

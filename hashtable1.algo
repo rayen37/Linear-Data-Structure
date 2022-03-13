@@ -1,0 +1,33 @@
+    ALGORITHM hashtable1
+    VAR
+    hash :HASH_TABLE<INTEGER,INTEGER>
+    tab1 : ARRAY_OF INTEGER[50];
+        tab2 : ARRAY_OF INTEGER[50];
+        i,j,sum :INTEGER
+
+    BEGIN
+        sum=0
+    //remplissage de hashtable
+        FOR i FROM 0 TO tab1.length -1 STEP 1  DO
+            hash.insert(tab1[i],1)
+        END_FOR
+        FOR j FROM 0 TO tab2.length -1  STEP 1  DO
+            IF (hash.lookup(tab2[j])=true) THEN
+                hash.insert(tab2[j],2)
+            ELSE
+                hash.insert(tab2[j],1)
+            END_IF        
+        END_FOR    
+
+        //somme des ellements repet
+
+        FOR i FROM 0 TO tab1.length -1 STEP 1  DO
+            IF (hash.get(tab1[i])=2) THEN
+                sum=sum+tab1[i]*2
+            END_IF
+        END_FOR
+
+
+
+
+    END
